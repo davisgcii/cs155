@@ -1,0 +1,14 @@
+---
+:id: 126335699
+:submitters:
+- :name: Caia Mai Costello
+  :email: caia@stanford.edu
+- :name: George Charles Davis
+  :email: gcdavis@stanford.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2022-05-13 06:38:46.796065000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2022-05-12 23:38:46.796065000 Z
+:status: processed
+:score: 10.5

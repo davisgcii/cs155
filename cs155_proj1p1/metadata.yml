@@ -1,0 +1,14 @@
+---
+:id: 120500998
+:submitters:
+- :name: Uma Dingankar
+  :email: udingank@stanford.edu
+- :name: George Charles Davis
+  :email: gcdavis@stanford.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2022-04-07 20:43:44.308921000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2022-04-07 13:43:44.308921000 Z
+:status: processed
+:score: 2.0

